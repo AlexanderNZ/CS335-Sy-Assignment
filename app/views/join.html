@@ -1,0 +1,31 @@
+<div class="col-sm-12 col-md-12 col-lg-12">
+
+</div>
+<div class="input-group" style="padding: 1%">
+  <span class="input-group-addon" id="username"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+  <input type="text" class="form-control" placeholder="Username" aria-describedby="Username">
+</div>
+
+<div class="input-group" style="padding: 1%">
+  <span class="input-group-addon" id="password"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></span>
+  <input type="text" class="form-control" placeholder="Password" aria-describedby="Password">
+</div>
+
+<div class="input-group" style="padding: 1%">
+  <span class="input-group-addon" id="address"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></span>
+  <input type="text" class="form-control" placeholder="Home Address" aria-describedby="Home">
+</div>
+
+<button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+  Loading state
+</button>
+
+<script>
+  $('#myButton').on('click', function () {
+    var $btn = $(this).button('loading')
+    // business logic...
+    $btn.button('reset')
+  })
+</script>
+
+</div>
