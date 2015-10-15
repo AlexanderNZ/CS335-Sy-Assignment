@@ -10,11 +10,7 @@
 angular.module('securityApp')
   .controller('PurchaseblurayCtrl', function () {
 
-    $scope.showBlurayById = function() {
-
-    };
-
-    $scope.purchaseBluray = function() {
+    $scope.purchaseBluray = function(id) {
 
       var data = null;
 
@@ -27,14 +23,15 @@ angular.module('securityApp')
         }
       });
 
-      var blurayId = document.getElementById().value;
-
-      xhr.open("GET", "http://redsox.tcs.auckland.ac.nz/BC/Closed/Service.svc/brbuy?id=" + blurayId);
+      xhr.open("GET", "http://redsox.tcs.auckland.ac.nz/BC/Closed/Service.svc/brbuy?id=" + id);
       xhr.setRequestHeader("accept", "application/json");
       xhr.setRequestHeader("authorization", "Digest username=\"bond007\", realm=\"Boutique Cassee\", nonce=\"a4b7f03f84930fa895bac99d21f5ab0a\", uri=\"/BC/Closed/Service.svc/brbuy?id=NedKelly\", response=\"abfa4ebc72a2280dc0df2629194c4bab\", opaque=\"4323283221553664\"");
       xhr.setRequestHeader("cache-control", "no-cache");
 
       xhr.send(data);
+      var response = xhr.responseText;
+      console.log("Trying to open alert window");
+      window.alert(response);
 
     }
 
