@@ -40,7 +40,20 @@ angular.module('securityApp')
         }
 
         $scope.requestResult = requestResult;
+        document.getElementById('commentsIframe').contentWindow.location = "http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/htmlcomments";
       };
       xhr.send(JSON.stringify(commentString));
     };
+
+    $scope.getComments = function() {
+
+
+      var xhr = new XMLHttpRequest();
+      var uri = "http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/htmlcomments";
+      xhr.open("GET", uri, true);
+      xhr.onload = function () {
+      };
+      xhr.send(null);
+    };
+
   });

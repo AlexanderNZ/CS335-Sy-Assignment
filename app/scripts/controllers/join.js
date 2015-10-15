@@ -41,6 +41,7 @@ angular.module('securityApp')
           console.log(json);
           document.getElementById('result').innerHTML = '<div class="alert alert-success" role="alert">Registration Successful!</div>';
         }
+
       };
       xhr.send(JSON.stringify(json));
     };

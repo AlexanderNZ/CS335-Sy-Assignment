@@ -1,24 +1,37 @@
-<div class="col-sm-12 col-md-12 col-lg-12">
+<div ng-controller="ShopCtrl" class="col-sm-12 col-md-12 col-lg-12">
 
-  <img src="images/ShopLogo.png" width="100%" class="img-responsive center-block" style="padding: 5%">
-
-  <div class="row">
+  <div class="row" style="padding: 3%">
     <div class="col-lg-12">
       <div class="input-group">
 
-        <input type="text" class="form-control" placeholder="Enter Search Query">
+        <input type="text" id="searchTerm" class="form-control" placeholder="Enter Search Query">
 
         <div class="input-group-btn">
           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                   aria-expanded="false">Search<span class="caret"></span></button>
           <ul class="dropdown-menu">
-            <li><a href="#">Search Books</a></li>
+            <li><a ng-click="searchBookByName()">Search Books</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Search Blurays</a></li>
+            <li><a ng-click="searchBlurayByName()">Search Blurays</a></li>
           </ul>
         </div>
+
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">Show all<span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a ng-click="displayAllBooks()">Show all Books</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a ng-click="displayAllBlurays()">Show all Blurays</a></li>
+          </ul>
+        </div>
+
       </div>
 
+      <div id="displayResult"></div>
     </div>
   </div>
+
+
+
 </div>

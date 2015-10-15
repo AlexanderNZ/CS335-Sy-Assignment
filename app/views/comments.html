@@ -1,7 +1,5 @@
 <div ng-controller="CommentsCtrl" class="col-sm-12 col-md-12 col-lg-12">
 
-  <img src="images/ShopLogo.png" width="100%" class="img-responsive center-block" style="padding: 5%">
-
   <h2 class="text-center">Leave us a comment!</h2>
 
   <textarea id="commentText" class="form-control" rows="3" placeholder="Enter your comment here"></textarea>
@@ -13,10 +11,14 @@
 
   <div class="btn-group" role="group" aria-label="..." style="padding: 3%">
     <button type="button" class="btn btn-primary" ng-click="sendComment()">Submit</button>
-    <button type="button" class="btn btn-danger">Clear</button>
   </div>
 
   <div id="result"></div>
+
+  <h3 class="text-center">Others have said:</h3>
+  <iframe id="commentsIframe" src="http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/htmlcomments" width="100%"></iframe>
+
+
 
 </div>
 
