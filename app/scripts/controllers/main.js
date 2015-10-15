@@ -9,9 +9,5 @@
  */
 angular.module('securityApp')
   .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    // Do something
   });

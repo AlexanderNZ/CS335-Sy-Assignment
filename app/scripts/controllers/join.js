@@ -20,12 +20,7 @@ angular.module('securityApp')
 
       $scope.jsonData = json;
 
-
-
-
       var uri = "http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/register";
-
-      var requestResult;
 
       var xhr = new XMLHttpRequest();
       xhr.open("POST", uri, true);
@@ -35,19 +30,17 @@ angular.module('securityApp')
         //Check status of request
         var responseText = JSON.parse(xhr.responseText);
 
-        if (responseText === "User name not available"){
+        if (responseText === "User name not available") {
           //then the process failed
-          console.log(responseText);
-          requestResult = false;
+          console.log("Response Text: " + responseText);
+          document.getElementById('result').innerHTML = '<div class="alert alert-danger" role="alert">Registration Failed: Username already in use!</div>';
         }
         // If post succeeds, log to console the json that was sent and a confirmation
-        if (responseText === "User Registered"){
-          console.log(responseText);
+        if (responseText === "User Registered") {
+          console.log("Response Text: " + responseText);
           console.log(json);
-          requestResult = true;
+          document.getElementById('result').innerHTML = '<div class="alert alert-success" role="alert">Registration Successful!</div>';
         }
-
-        $scope.requestResult = requestResult;
       };
       xhr.send(JSON.stringify(json));
     };
