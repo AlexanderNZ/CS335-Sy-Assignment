@@ -26,7 +26,7 @@ angular.module('securityApp')
         //Check status of request
         var responseText = JSON.parse(xhr.responseText);
 
-        if (responseText != commentString) {
+        if (responseText !== commentString) {
           //then the process failed
           console.log(responseText);
           console.log("Comment POST failed");

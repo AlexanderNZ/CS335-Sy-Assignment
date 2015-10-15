@@ -27,7 +27,7 @@ angular.module('securityApp')
 
 
         //if there are results
-        if (xhr.responseText.length != 0) {
+        if (xhr.responseText.length !== 0) {
           for(var i = 0; i < searchResult.length; i++) {
             var obj = searchResult[i];
 
@@ -92,7 +92,7 @@ angular.module('securityApp')
 
 
         //if there are results
-        if (xhr.responseText.length != 0) {
+        if (xhr.responseText.length !== 0) {
           for(var i = 0; i < searchResult.length; i++) {
             var obj = searchResult[i];
 
@@ -138,6 +138,6 @@ angular.module('securityApp')
         }
       };
       xhr.send(null);
-    }
+    };
 
   });
