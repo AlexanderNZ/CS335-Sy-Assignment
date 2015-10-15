@@ -8,7 +8,7 @@
  * Controller of the securityApp
  */
 angular.module('securityApp')
-  .controller('ShopCtrl', function ($scope) {
+  .controller('ShopCtrl', function ($scope, $rootScope) {
 
     $scope.searchBlurayByName = function() {
 
@@ -19,19 +19,20 @@ angular.module('securityApp')
       xhr.setRequestHeader("accept", "application/json");
       xhr.onload = function () {
         var searchResult = JSON.parse(xhr.responseText);
-        document.getElementById('displayResult').innerHTML = "";
 
         //if there are results
         if (xhr.responseText.length !== 0) {
+          var buyingArray = [];
           for(var i = 0; i < searchResult.length; i++) {
-            var obj = searchResult[i];
-            var title = obj.Title;
-            var id = obj.Id;
-            var imgUrl = "http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/brimg?id=" + obj.Id;
-
-            document.getElementById('displayResult').innerHTML += '<div class="media"><div class="media-left media-middle"><img class="media-object" src=' + imgUrl + ' alt="..."></div><div class="media-body"><h4 id="movieTitle" class="media-heading">' + title + '</h4><img src="images/buy-now.jpg" height="50px" ng-click="purchaseBluray(id)">' + id + '</div> <button type="button" class="btn btn-primary" ng-click="purchaseBluray(' + id + ')">Buy</button> </div>';
-
+            var obj = {};
+            obj.title = searchResult[i].Title;
+            obj.id = searchResult[i].Id;
+            obj.img = "http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/brimg?id=" + searchResult[i].Id;
+            buyingArray.push(obj);
           }
+          $scope.buyingArray = buyingArray;
+          console.log("buying array:" + buyingArray[0].id);
+          $rootScope.$digest();
         }
 
         if (jQuery.isEmptyObject(searchResult)) {
@@ -44,31 +45,37 @@ angular.module('securityApp')
 
     $scope.displayAllBlurays = function() {
 
-
-
       var xhr = new XMLHttpRequest();
       var uri = "http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/brlist";
       xhr.open("GET", uri, true);
       xhr.setRequestHeader("accept", "application/json");
       xhr.onload = function () {
         var searchResult = JSON.parse(xhr.responseText);
-        document.getElementById('displayResult').innerHTML = "";
 
+        //if there are results
+        if (xhr.responseText.length !== 0) {
+          var buyingArray = [];
           for(var i = 0; i < searchResult.length; i++) {
-            var obj = searchResult[i];
-            var title = obj.Title;
-            var imgUrl = "http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/brimg?id=" + obj.Id;
-
-            document.getElementById('displayResult').innerHTML += '<div class="media"><div class="media-left media-middle"><img class="media-object" src=' + imgUrl + ' alt="..."></div><div class="media-body"><h4 id="movieTitle" class="media-heading">' + title + '</h4><a href="#/purchaseBluray"><img src="images/buy-now.jpg" height="50px"></a></div> </div>';
-
+            var obj = {};
+            obj.title = searchResult[i].Title;
+            obj.id = searchResult[i].Id;
+            obj.img = "http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/brimg?id=" + searchResult[i].Id;
+            buyingArray.push(obj);
           }
+          $scope.buyingArray = buyingArray;
+          console.log("buying array:" + buyingArray[0].id);
+          $rootScope.$digest();
+        }
+
+        if (jQuery.isEmptyObject(searchResult)) {
+          document.getElementById('displayResult').innerHTML = '<div class="alert alert-danger" role="alert">No items matching your query were found :(</div>';
+        }
+
       };
       xhr.send(null);
     };
 
     $scope.searchBookByName = function() {
-
-
 
       var xhr = new XMLHttpRequest();
       var searchTerm = document.getElementById("searchTerm").value;
@@ -77,18 +84,20 @@ angular.module('securityApp')
       xhr.setRequestHeader("accept", "application/json");
       xhr.onload = function () {
         var searchResult = JSON.parse(xhr.responseText);
-        document.getElementById('displayResult').innerHTML = "";
 
         //if there are results
         if (xhr.responseText.length !== 0) {
+          var buyingArray = [];
           for(var i = 0; i < searchResult.length; i++) {
-            var obj = searchResult[i];
-            var title = obj.Title;
-            var imgUrl = "http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/bookimg?id=" + obj.Id;
-
-            document.getElementById('displayResult').innerHTML += '<div class="media"><div class="media-left media-middle"><img class="media-object" src=' + imgUrl + ' alt="..."></div><div class="media-body"><h4 id="movieTitle" class="media-heading">' + title + '</h4><a href="#/purchaseBook"><img src="images/buy-now.jpg" height="50px"></a></div> </div>';
-
+            var obj = {};
+            obj.title = searchResult[i].Title;
+            obj.id = searchResult[i].Id;
+            obj.img = "http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/bookimg?id=" + searchResult[i].Id;
+            buyingArray.push(obj);
           }
+          $scope.buyingArray = buyingArray;
+          console.log("buying array:" + buyingArray[0].id);
+          $rootScope.$digest();
         }
 
         if (jQuery.isEmptyObject(searchResult)) {
@@ -101,24 +110,32 @@ angular.module('securityApp')
 
     $scope.displayAllBooks = function() {
 
-
-
       var xhr = new XMLHttpRequest();
       var uri = "http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/booklist";
       xhr.open("GET", uri, true);
       xhr.setRequestHeader("accept", "application/json");
       xhr.onload = function () {
         var searchResult = JSON.parse(xhr.responseText);
-        document.getElementById('displayResult').innerHTML = "";
 
-        for(var i = 0; i < searchResult.length; i++) {
-          var obj = searchResult[i];
-          var title = obj.Title;
-          var imgUrl = "http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/bookimg?id=" + obj.Id;
-
-          document.getElementById('displayResult').innerHTML += '<div class="media"><div class="media-left media-middle"><img class="media-object" src=' + imgUrl + ' alt="..."></div><div class="media-body"><h4 id="movieTitle" class="media-heading">' + title + '</h4><a href="#/purchaseBook"><img src="images/buy-now.jpg" height="50px"></a></div> </div>';
-
+        //if there are results
+        if (xhr.responseText.length !== 0) {
+          var buyingArray = [];
+          for(var i = 0; i < searchResult.length; i++) {
+            var obj = {};
+            obj.title = searchResult[i].Title;
+            obj.id = searchResult[i].Id;
+            obj.img = "http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/bookimg?id=" + searchResult[i].Id;
+            buyingArray.push(obj);
+          }
+          $scope.buyingArray = buyingArray;
+          console.log("buying array:" + buyingArray[0].id);
+          $rootScope.$digest();
         }
+
+        if (jQuery.isEmptyObject(searchResult)) {
+          document.getElementById('displayResult').innerHTML = '<div class="alert alert-danger" role="alert">No items matching your query were found :(</div>';
+        }
+
       };
       xhr.send(null);
     };
@@ -144,6 +161,7 @@ angular.module('securityApp')
       xhr.send(data);
       var response = xhr.responseText;
       console.log("Trying to open alert window");
+      console.log("id is " + id);
       window.alert(response);
 
     }

@@ -28,7 +28,20 @@
 
       </div>
 
-      <div id="displayResult"></div>
+      <div ng-if="buyingArray.length !== 0">
+        <div ng-repeat="item in buyingArray">
+          <div class="media">
+            <div class="media-left media-middle">
+              <img class="media-object" ng-src="{{item.img}}" alt="..."/>
+            </div>
+            <div class="media-body">
+              <h4 id="movieTitle" class="media-heading">{{item.title}}</h4>
+              <button type="button" class="btn btn-primary" ng-click="purchaseBluray('{{item.id}}')"
+                >Buy</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
