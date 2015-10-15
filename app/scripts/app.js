@@ -44,6 +44,16 @@ angular
         controller: 'CommentsCtrl',
         controllerAs: 'comments'
       })
+      .when('/purchaseBook', {
+        templateUrl: 'views/purchasebook.html',
+        controller: 'PurchasebookCtrl',
+        controllerAs: 'purchaseBook'
+      })
+      .when('/purchaseBluray', {
+        templateUrl: 'views/purchasebluray.html',
+        controller: 'PurchaseblurayCtrl',
+        controllerAs: 'purchaseBluray'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -12,8 +12,6 @@ angular.module('securityApp')
 
     $scope.searchBlurayByName = function() {
 
-
-
       var xhr = new XMLHttpRequest();
       var searchTerm = document.getElementById("searchTerm").value;
       var uri = "http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/brsearch?term=" + searchTerm;
@@ -36,7 +34,7 @@ angular.module('securityApp')
             var title = obj.Title;
             var imgUrl = "http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/brimg?id=" + obj.Id;
 
-            document.getElementById('displayResult').innerHTML += '<div class="media"><div class="media-left media-middle"><a href="#"><img class="media-object" src=' + imgUrl + ' alt="..."></a></div><div class="media-body"><h4 id="movieTitle" class="media-heading">' + title + '</h4>This is the Movie Text</div> </div>';
+            document.getElementById('displayResult').innerHTML += '<div class="media"><div class="media-left media-middle"><a href="#"><img class="media-object" src=' + imgUrl + ' alt="..."></a></div><div class="media-body"><h4 id="movieTitle" class="media-heading">' + title + '</h4><a href="#/purchaseBluray"><img src="images/buy-now.jpg" height="50px"></a></div> </div>';
 
           }
         }
@@ -68,7 +66,7 @@ angular.module('securityApp')
             var title = obj.Title;
             var imgUrl = "http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/brimg?id=" + obj.Id;
 
-            document.getElementById('displayResult').innerHTML += '<div class="media"><div class="media-left media-middle"><a href="#"><img class="media-object" src=' + imgUrl + ' alt="..."></a></div><div class="media-body"><h4 id="movieTitle" class="media-heading">' + title + '</h4>This is the Movie Text</div> </div>';
+            document.getElementById('displayResult').innerHTML += '<div class="media"><div class="media-left media-middle"><a href="#"><img class="media-object" src=' + imgUrl + ' alt="..."></a></div><div class="media-body"><h4 id="movieTitle" class="media-heading">' + title + '</h4><a href="#/purchaseBluray"><img src="images/buy-now.jpg" height="50px"></a></div> </div>';
 
           }
       };
@@ -101,7 +99,7 @@ angular.module('securityApp')
             var title = obj.Title;
             var imgUrl = "http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/bookimg?id=" + obj.Id;
 
-            document.getElementById('displayResult').innerHTML += '<div class="media"><div class="media-left media-middle"><a href="#"><img class="media-object" src=' + imgUrl + ' alt="..."></a></div><div class="media-body"><h4 id="movieTitle" class="media-heading">' + title + '</h4>This is the Movie Text</div> </div>';
+            document.getElementById('displayResult').innerHTML += '<div class="media"><div class="media-left media-middle"><a href="#"><img class="media-object" src=' + imgUrl + ' alt="..."></a></div><div class="media-body"><h4 id="movieTitle" class="media-heading">' + title + '</h4><a href="#/purchaseBook"><img src="images/buy-now.jpg" height="50px"></a></div> </div>';
 
           }
         }
@@ -133,7 +131,7 @@ angular.module('securityApp')
           var title = obj.Title;
           var imgUrl = "http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/bookimg?id=" + obj.Id;
 
-          document.getElementById('displayResult').innerHTML += '<div class="media"><div class="media-left media-middle"><a href="#"><img class="media-object" src=' + imgUrl + ' alt="..."></a></div><div class="media-body"><h4 id="movieTitle" class="media-heading">' + title + '</h4>This is the Book Text</div> </div>';
+          document.getElementById('displayResult').innerHTML += '<div class="media"><div class="media-left media-middle"><a href="#"><img class="media-object" src=' + imgUrl + ' alt="..."></a></div><div class="media-body"><h4 id="movieTitle" class="media-heading">' + title + '</h4><a href="#/purchaseBook"><img src="images/buy-now.jpg" height="50px"></a></div> </div>';
 
         }
       };
