@@ -1,29 +1,41 @@
-<div class="col-sm-12 col-md-12 col-lg-12">
+<div ng-controller="JoinCtrl" class="col-sm-12 col-md-12 col-lg-12">
 
   <img src="images/ShopLogo.png" width="100%" class="img-responsive center-block" style="padding: 5%">
 
   <h2 class="text-center">Sign up here!</h2>
 
+  <form id="submitForm">
   <div class="input-group" style="padding: 1%">
     <span class="input-group-addon" id="username"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
-    <input type="text" class="form-control" placeholder="Username" aria-describedby="Username">
+    <input type="text" class="form-control" placeholder="Username" aria-describedby="Username" name="username" id="nameValue">
   </div>
 
   <div class="input-group" style="padding: 1%">
     <span class="input-group-addon" id="password"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></span>
-    <input type="text" class="form-control" placeholder="Password" aria-describedby="Password">
+    <input type="text" class="form-control" placeholder="Password" aria-describedby="Password" name="password" id="passwordValue">
   </div>
 
   <div class="input-group" style="padding: 1%">
     <span class="input-group-addon" id="address"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></span>
-    <input type="text" class="form-control" placeholder="Home Address" aria-describedby="Home">
+    <input type="text" class="form-control" placeholder="Home Address" aria-describedby="Home" name="address" id="addressValue">
   </div>
+  </form>
 
-  <div class="btn-group" role="group" aria-label="...">
-    <button type="button" class="btn btn-primary">Submit</button>
+
+  <div class="btn-group" role="group" aria-label="..." style="padding: 3%">
+    <button type="button" class="btn btn-primary" ng-click="signUp()">Submit</button>
     <button type="button" class="btn btn-danger">Clear</button>
     <button type="button" class="btn btn-info">Forgot Password</button>
   </div>
+
+  <div ng-if="requestResult === true">
+    <div class="alert alert-success" role="alert">Registration Successful!</div>
+  </div>
+
+  <div ng-if="requestResult === false">
+    <div class="alert alert-danger" role="alert">Registration Failed! Username already exists</div>
+  </div>
+  <p id="demo"></p>
 
 </div>
 
