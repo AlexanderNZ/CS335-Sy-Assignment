@@ -61,6 +61,7 @@ angular.module('securityApp')
             obj.id = searchResult[i].Id;
             obj.img = "http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/brimg?id=" + searchResult[i].Id;
             buyingArray.push(obj);
+            console.log(buyingArray.length);
           }
           $scope.buyingArray = buyingArray;
           console.log("buying array:" + buyingArray[0].id);
@@ -126,6 +127,7 @@ angular.module('securityApp')
             obj.id = searchResult[i].Id;
             obj.img = "http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/bookimg?id=" + searchResult[i].Id;
             buyingArray.push(obj);
+            console.log(buyingArray.length);
           }
           $scope.buyingArray = buyingArray;
           console.log("buying array:" + buyingArray[0].id);
