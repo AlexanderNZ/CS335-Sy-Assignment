@@ -24,11 +24,6 @@ angular
         controller: 'ShopCtrl',
         controllerAs: 'main'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
       .when('/shop', {
         templateUrl: 'views/shop.html',
         controller: 'ShopCtrl',
@@ -43,16 +38,6 @@ angular
         templateUrl: 'views/comments.html',
         controller: 'CommentsCtrl',
         controllerAs: 'comments'
-      })
-      .when('/purchaseBook', {
-        templateUrl: 'views/purchasebook.html',
-        controller: 'PurchasebookCtrl',
-        controllerAs: 'purchaseBook'
-      })
-      .when('/purchaseBluray', {
-        templateUrl: 'views/purchasebluray.html',
-        controller: 'PurchaseblurayCtrl',
-        controllerAs: 'purchaseBluray'
       })
       .otherwise({
         redirectTo: '/'
