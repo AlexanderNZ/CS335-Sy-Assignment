@@ -1,14 +1,15 @@
 N01. There are 28 Books available in store
 N02. There are 41 Blurays available in store
-N03.  http://localhost:8188/Service.svc/brsearch?term=%27%3B%20DROP%20TABLE%20Blurays%3B
-N04.
-N05.
-N06.
+N03. http://localhost:8188/Service.svc/brsearch?term=%27%3B%20DROP%20TABLE%20Blurays%3B
+N04. See html_injection.png
+N05. Note that this injection was done against localhost however for assessment purposes I have changed the comments url back to redsox as per Mano's advice :) See html_injection_image.png
+N06. I used XSS on the comments box again, I typed http://localhost:8188/Service.svc/comment/?name=%E2%80%9C%3E%3Cscript%3Ealert(%22ajshgdkjashgd%22)%3C%2Fscript%3E
+
 
 C01. 53 51 4C 69 74 65 20 66 6F 72 6D 61 74 - SQLite Format 3
 C02. 4 Tables exist. 5 if you include the master table
 C03. user150
-C04. See html_injection.png
-C05. Note that this injection was done against localhost however for assessment purposes I have changed the comments url back to redsox as per Mano's advice :) See html_injection_image.png
+C04.
+C05.
 C06.
-C07. 
+C07.
