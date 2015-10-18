@@ -9,7 +9,7 @@ N06. I used XSS on the comments box again, I typed http://localhost:8188/Service
 C01. 53 51 4C 69 74 65 20 66 6F 72 6D 61 74 - SQLite Format 3
 C02. 4 Tables exist. 5 if you include the master table
 C03. user150
-C04.
+C04. battle
 C05.
 C06.
 C07.
