@@ -5,8 +5,18 @@ version 0.12.1.
 
 ## Build & development
 
-Run `grunt` for building and `grunt serve` for preview.
+(All of the below commands should be run from the terminal)
+To install dependencies:
 
-## Testing
+npm install 
+and then:
+bower install
 
-Running `grunt test` will run the unit tests with karma.
+To View the live page:
+Run `grunt serve` for preview.
+
+## Please note that I have submitted an empty text file for part 2 due to not being allowed to
+## submit a file with images in it to demonstrate some of the answers. My answers for part 2
+## can be found either in the part2_Answers.7z file or within app/part2_Answers directory
+
+Alex Corkin 6597725 acor064
