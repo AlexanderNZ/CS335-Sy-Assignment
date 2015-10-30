@@ -20,3 +20,21 @@ Run `grunt serve` for preview.
 ## can be found either in the part2_Answers.7z file or within app/part2_Answers directory
 
 Alex Corkin 6597725 acor064
+
+============= Post Submission Update ==============
+
+Assuming a clean install of any operating system, such as on a UoA lab computer,
+You will need to:
+
+Install nodeJS (which provides node package manager aka npm)
+Install Bower
+Install grunt-cli
+You may also need to install Ruby, some operating systems come with it, some don't.
+
+After that's been done, navigate your terminal of choice to the download directory, then run
+
+npm install
+bower install
+grunt serve
+
+This will install dependencies within the download directory and run the project.
